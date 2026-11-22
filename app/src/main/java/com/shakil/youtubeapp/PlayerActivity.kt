@@ -44,8 +44,10 @@ class PlayerActivity : AppCompatActivity() {
     private fun setupPlayer(videoId: String) {
         binding.youtubePlayer.settings.apply {
             javaScriptEnabled = true
+            domStorageEnabled = true
             loadWithOverviewMode = true
             useWideViewPort = true
+            mediaPlaybackRequiresUserGesture = false
             cacheMode = WebSettings.LOAD_DEFAULT
         }
         binding.youtubePlayer.webViewClient = WebViewClient()
@@ -64,7 +66,7 @@ class PlayerActivity : AppCompatActivity() {
           <body style="margin:0;padding:0;background:#000;">
             <iframe
               width="100%" height="100%"
-              src="https://www.youtube.com/embed/$videoId?autoplay=1&rel=0"
+              src="https://www.youtube.com/embed/$videoId?autoplay=1&playsinline=1&rel=0&modestbranding=1"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
