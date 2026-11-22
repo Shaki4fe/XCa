@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "Video": {
+      "title": "Video",
+      "description": "A video entry in the MyTube feed",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "videoId": { "type": "string", "maxLength": 32 },
+        "channel": { "type": "string", "maxLength": 100 },
+        "views": { "type": "number" },
+        "duration": { "type": "string", "maxLength": 8 },
+        "thumbnailUrl": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "videoId", "channel", "views", "createdAt"]
+    },
+    "Channel": {
+      "title": "Channel",
+      "description": "A channel that publishes videos",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "handle": { "type": "string", "maxLength": 100 },
+        "subscribers": { "type": "number" },
+        "avatarUrl": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "handle", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/videos/{videoId}": {
+      "schema": "Video",
+      "description": "Video catalog shown in the MyTube home feed"
+    },
+    "/channels/{channelId}": {
+      "schema": "Channel",
+      "description": "Channel profiles that publish videos"
+    }
+  }
+}
