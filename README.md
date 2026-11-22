@@ -25,8 +25,8 @@ generates the Gradle wrapper on first sync. After that, the CLI build works:
 **Shakil (Shaki4fe)** — GitHub ID: `345276685`
 
 - Profile: [@Shaki4fe](https://github.com/Shaki4fe)
-- Badge: ![@Shaki4fe](https://img.shields.io/badge/followers-%40Shaki4fe-181717?logo=github)
-- Repos: ![@Shaki4fe](https://img.shields.io/badge/public%20repos-1-181717?logo=github)
+- Followers: ![GitHub followers](https://img.shields.io/github/followers/Shaki4fe?label=followers&logo=github)
+- Public repos: ![dynamic](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FShaki4fe&query=%24.public_repos&label=public%20repos&logo=github)
 
 ## 💰 অর্ডার ও পেমেন্ট
 
@@ -39,6 +39,13 @@ generates the Gradle wrapper on first sync. After that, the CLI build works:
 5. TrxID যাচাইয়ের পর অর্ডার শুরু হবে, বাকি পেমেন্ট ডেভেলিভারির সময়
 
 > ⚠️ নোট: টাকা পাঠানোর আগে Issue-তে অর্ডারের বিবরণ লিখে যাচাই করে নিন।
+
+## Download APK
+প্রতিটি push-এ GitHub Actions দুটো অ্যাপেরই debug APK বিল্ড করে:
+
+1. রিপোর **Actions** ট্যাবে যান → **Build APKs** → সর্বশেষ সফল রানে ক্লিক করুন
+2. নিচের **Artifacts** থেকে ডাউনলোড করুন: `MyTube-debug-apk` বা `QuickDial-debug-apk`
+3. মোবাইলে ইনস্টল করতে হলে "Unknown sources" অনুমতি দিতে হবে
 
 ## Project structure
 ```
