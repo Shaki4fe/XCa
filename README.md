@@ -13,7 +13,8 @@ A YouTube-style Android app built with Kotlin and Jetpack libraries.
 - Coil for image loading
 
 ## Build
-Open the project in Android Studio (Ladybug or newer) and let Gradle sync, or run:
+Open the project in Android Studio (Ladybug or newer) and let Gradle sync — Android Studio
+generates the Gradle wrapper on first sync. After that, the CLI build works:
 
 ```bash
 ./gradlew :app:assembleDebug
