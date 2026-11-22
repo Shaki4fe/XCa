@@ -20,6 +20,14 @@ generates the Gradle wrapper on first sync. After that, the CLI build works:
 ./gradlew :app:assembleDebug
 ```
 
+## Author
+
+**Shakil (Shaki4fe)** — GitHub ID: `345276685`
+
+- Profile: [@Shaki4fe](https://github.com/Shaki4fe)
+- Badge: ![@Shaki4fe](https://img.shields.io/badge/followers-%40Shaki4fe-181717?logo=github)
+- Repos: ![@Shaki4fe](https://img.shields.io/badge/public%20repos-1-181717?logo=github)
+
 ## Project structure
 ```
 app/src/main/java/com/shakil/youtubeapp/
