@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickDial</string>
+    <string name="enter_number_hint">একটি নম্বর ডায়াল করুন</string>
+    <string name="quick_call_label">📞 Shakil — 01913340417</string>
+    <string name="call_label">Call</string>
+    <string name="backspace_description">Backspace</string>
+</resources>
