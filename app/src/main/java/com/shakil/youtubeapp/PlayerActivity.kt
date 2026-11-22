@@ -49,8 +49,8 @@ class PlayerActivity : AppCompatActivity() {
             cacheMode = WebSettings.LOAD_DEFAULT
         }
         binding.youtubePlayer.webViewClient = WebViewClient()
-        binding.youtubePlayer.loadDataWithMIMEType(
-            "text/html",
+        binding.youtubePlayer.loadDataWithBaseURL(
+            null,
             playerHtml(videoId),
             "text/html",
             "UTF-8",
