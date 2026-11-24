@@ -1,16 +1,30 @@
-# QuickDial — one-tap call dialer (Kotlin)
+# QuickDial Pro — real-dialer Android app (Kotlin) v2.0
 
-একটা ছোট কিন্তু কাজের Android ডায়ালার অ্যাপ — Kotlin-এ বানানো।
+সম্পূর্ণ নতুন ভার্সন — শুধু কুইক-কল নয়, পূর্ণাঙ্গ ডায়ালার অ্যাপ।
 
 ## Features
-- **রেডি কান্টাক্ট:** শাকিলের নাম্বার `01913340417` সেভ করা — এক ট্যাপে কল ডায়ালার খুলবে
-- **সম্পূর্ণ ডায়াল-প্যাড:** `0-9`, `*`, `#` — যেকোনো নাম্বার ডায়াল করা যায়
-- **Backspace:** ট্যাপ করলে এক অক্ষর মুছবে, লং-প্রেস করলে পুরো নাম্বার মুছবে
-- **সেফ কলিং:** `ACTION_DIAL` ব্যবহার করে — কোনো পারমিশন লাগে না, ব্যবহারকারী নিজে কল বাটন চাপে
-- Material 3 UI, ViewBinding, minSdk 24 / SDK 35
+
+### 📞 ডায়ালার
+- সম্পূর্ণ ডায়াল-প্যাড (`0-9`, `*`, `#`), backspace (ট্যাপ = ১ ডিজিট, লং-প্রেস = সব)
+- **আসল কল:** `CALL_PHONE` পারমিশন দিলে সরাসরি কল (`ACTION_CALL`), না দিলে সেফ ফলব্যাক ডায়ালার
+- **কুইক কল:** শাকিলের নাম্বার `01913340417` এক ট্যাপে
+
+### 👤 কন্টাক্ট (ফোনবুক)
+- `READ_CONTACTS` অনুমতিতে ফোনের সব কন্টাক্ট (নাম + নাম্বার) সাজানো লিস্টে
+- যেকোনো কন্টাক্টে ট্যাপ করলেই সরাসরি কল
+
+### 🎙️ কল রেকর্ডিং ঘোষণা (প্রিমিয়াম)
+- কল কানেক্ট হলে ফোন বাংলায় বলবে: **"আপনার কলটি রেকর্ড করা হচ্ছে"** (TTS)
+- সেটিংস থেকে চালু/বন্ধ করা যায়
+- ⚠️ সততার নোট: Android 10+ এ তৃতীয়পক্ষের অ্যাপ সরাসরি কল রেকর্ড করতে পারে না; ঘোষণা speakerphone চালু থাকলে সবচেয়ে ভালো শোনা যায়
+
+### ⭐ প্রিমিয়াম (বিকাশ TrxID)
+- বিকাশ Personal: `01913340417` — অগ্রিম **৫,০০০ টাকা**
+- TrxID দিয়ে অ্যাক্টিভেশন (ফরম্যাট-যাচাই অফলাইনে — সার্ভার-ভেরিফিকেশন পরে যোগ করা যাবে)
+- প্রিমিয়াম ছাড়া রেকর্ডিং ঘোষণা লক থাকে
 
 ## Build
-`apps/quickdial/` ফোল্ডারটা Android Studio-তে ওপেন করো (Gradle sync-এ wrapper তৈরি হবে), তারপর:
+`apps/quickdial/` ফোল্ডারটা Android Studio-তে খুলে Gradle sync করো, বা:
 
 ```bash
 ./gradlew :app:assembleDebug
@@ -19,6 +33,13 @@
 ## Structure
 ```
 apps/quickdial/app/src/main/java/com/shakil/quickdial/
-  MainActivity.kt  dial pad + call logic
-  QuickContact.kt  saved contact config
+  MainActivity.kt          bottom-nav host (ডায়ালার | কন্টাক্ট | সেটিংস)
+  DialerFragment.kt        ডায়াল-প্যাড + আসল কল
+  ContactsFragment.kt      ফোনবুক লিস্ট + কল
+  SettingsFragment.kt      অ্যানাউন্সমেন্ট টগল + প্রিমিয়াম কার্ড
+  PremiumActivity.kt       TrxID অ্যাক্টিভেশন
+  PhoneStateReceiver.kt    কল ডিটেক্ট → ঘোষণা ট্রিগার
+  AnnouncementService.kt   বাংলা TTS ঘোষণা
+  AppPrefs.kt              প্রিমিয়াম/সেটিংস স্টোরেজ
+  QuickContact.kt          কন্টাক্ট/বিকাশ কনফিগ
 ```

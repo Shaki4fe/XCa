@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QuickDial</string>
+    <string name="app_name">QuickDial Pro</string>
     <string name="enter_number_hint">একটি নম্বর ডায়াল করুন</string>
     <string name="quick_call_label">📞 Shakil — 01913340417</string>
     <string name="call_label">Call</string>
     <string name="backspace_description">Backspace</string>
+
+    <string name="nav_dialer">ডায়ালার</string>
+    <string name="nav_contacts">কন্টাক্ট</string>
+    <string name="nav_settings">সেটিংস</string>
+
+    <string name="contacts_title">ফোনবুক কন্টাক্ট</string>
+    <string name="contacts_permission_denied">কন্টাক্ট পড়ার অনুমতি ছাড়া ফোনবুক দেখা যাবে না</string>
+
+    <string name="settings_title">সেটিংস</string>
+    <string name="settings_bkash_title">💳 বিকাশ পেমেন্ট</string>
+    <string name="settings_bkash_hint">নাম্বার: 01913340417 (Personal) • প্রিমিয়াম অগ্রিম ৫,০০০ টাকা • ট্যাপ করে নাম্বার দেখুন</string>
+    <string name="settings_bkash_value">বিকাশ নাম্বার: %1$s</string>
+
+    <string name="settings_announcement_title">🎙️ কল রেকর্ডিং ঘোষণা</string>
+    <string name="settings_announcement_summary">কল ধরা হলে বাংলায় বলা হবে: \"আপনার কলটি রেকর্ড করা হচ্ছে\"</string>
+    <string name="settings_announcement_premium_only">এই ফিচারটি প্রিমিয়াম — TrxID দিয়ে অ্যাক্টিভ করুন</string>
+
+    <string name="settings_premium_title">⭐ প্রিমিয়াম</string>
+    <string name="settings_premium_active">স্ট্যাটাস: অ্যাক্টিভ ✓</string>
+    <string name="settings_premium_inactive">স্ট্যাটাস: অ্যাক্টিভ হয়নি</string>
+    <string name="settings_premium_activate">TrxID দিয়ে অ্যাক্টিভ করুন</string>
+    <string name="settings_premium_manage">লাইসেন্স দেখুন</string>
+
+    <string name="premium_title">⭐ প্রিমিয়াম অ্যাক্টিভেশন</string>
+    <string name="premium_steps">১. বিকাশ Personal থেকে ০১৯১৩৩৪০৪১৭ নাম্বারে অগ্রিম ৫,০০০ টাকা পাঠান\n২. পাঠানোর পর bKash থেকে প্রাপ্ত ট্রানজেকশন আইডি (TrxID) কপি করুন\n৩. নিচের ঘরে TrxID দিয়ে Activate চাপুন</string>
+    <string name="premium_trx_label">বিকাশ TrxID</string>
+    <string name="premium_trx_hint">যেমন: 8N7DGAS56X</string>
+    <string name="premium_activate_button">Activate প্রিমিয়াম</string>
+    <string name="premium_activated">✅ প্রিমিয়াম অ্যাক্টিভ হয়েছে — TrxID সংরক্ষিত আছে</string>
+    <string name="premium_invalid_trx">❌ TrxID সঠিক নয় — bKash থেকে আসা আইডিটি হুবহু দিন</string>
+
+    <string name="update_check_button">🔄 নতুন আপডেট চেক করুন</string>
+    <string name="update_available_title">🚀 নতুন ভার্সন এসেছে!</string>
+    <string name="update_available_message">QuickDial Pro %1$s নামানোর জন্য প্রস্তুত।</string>
+    <string name="update_download">আপডেট নামাও</string>
+    <string name="update_later">পরে</string>
+    <string name="update_downloading">⬇️ আপডেট নামছে…</string>
+    <string name="update_up_to_date">✅ অ্যাপটি ইতিমধ্যে সর্বশেষ ভার্সনে আছে</string>
+    <string name="update_install_failed">ইনস্টল পেজ খোলা যায়নি — "Install unknown apps" অনুমতি দিন</string>
 </resources>

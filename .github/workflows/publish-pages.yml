@@ -1,0 +1,73 @@
+name: Publish to Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/quickdial/**'
+      - 'app/**'
+      - 'docs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build QuickDial Pro
+        run: gradle -p apps/quickdial :app:assembleDebug --no-daemon
+
+      - name: Build MyTube
+        run: gradle :app:assembleDebug --no-daemon
+
+      - name: Copy APKs into docs/
+        run: |
+          mkdir -p docs/apks
+          cp apps/quickdial/app/build/outputs/apk/debug/app-debug.apk docs/apks/QuickDial-debug.apk
+          cp app/build/outputs/apk/debug/app-debug.apk docs/apks/MyTube-debug.apk
+
+      - name: Sync version manifests from build.gradle.kts
+        run: |
+          QD_CODE=$(grep -oP 'versionCode = \K[0-9]+' apps/quickdial/app/build.gradle.kts)
+          QD_NAME=$(grep -oP 'versionName = "\K[^"]+' apps/quickdial/app/build.gradle.kts)
+          MY_CODE=$(grep -oP 'versionCode = \K[0-9]+' app/build.gradle.kts)
+          MY_NAME=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
+          export QD_CODE QD_NAME MY_CODE MY_NAME
+          python3 - <<'PY'
+          import json, os
+          def sync(path, code, name, apk):
+              with open(path) as f: data = json.load(f)
+              data['versionCode'] = int(code)
+              data['versionName'] = name
+              data['apkUrl'] = f'https://shaki4fe.github.io/XCa/{apk}'
+              with open(path, 'w') as f: json.dump(data, f, ensure_ascii=False, indent=2)
+          sync('docs/quickdial-update.json', os.environ['QD_CODE'], os.environ['QD_NAME'], 'apks/QuickDial-debug.apk')
+          sync('docs/mytube-update.json', os.environ['MY_CODE'], os.environ['MY_NAME'], 'apks/MyTube-debug.apk')
+          PY
+
+      - name: Commit published artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet && echo "Nothing to publish" && exit 0
+          git commit -m "Publish latest APKs to Pages [skip ci]"
+          git push origin main

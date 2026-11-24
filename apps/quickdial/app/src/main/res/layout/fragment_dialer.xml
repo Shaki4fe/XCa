@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/number_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:gravity="center"
+        android:text="@string/enter_number_hint"
+        android:textSize="28sp"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quick_call_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/quick_call_label"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/accent_green"
+        app:layout_constraintTop_toBottomOf="@id/number_display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <GridLayout
+        android:id="@+id/dial_pad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@id/quick_call_button"
+        app:layout_constraintBottom_toTopOf="@id/call_row"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/call_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/backspace_button"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/backspace_description"
+            android:src="@drawable/ic_backspace"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/call_button"
+            android:layout_width="160dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/call_label"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:backgroundTint="@color/accent_green"
+            app:icon="@drawable/ic_call"
+            app:iconGravity="textStart" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

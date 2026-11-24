@@ -1,0 +1,8 @@
+{
+  "app": "QuickDial Pro",
+  "package": "com.shakil.quickdial",
+  "versionCode": 3,
+  "versionName": "2.1",
+  "apkUrl": "https://shaki4fe.github.io/XCa/apks/QuickDial-debug.apk",
+  "notes": "ফুল ডায়ালার: আসল কল, ফোনবুক, রেকর্ডিং ঘোষণা, প্রিমিয়াম TrxID অ্যাক্টিভেশন।"
+}
