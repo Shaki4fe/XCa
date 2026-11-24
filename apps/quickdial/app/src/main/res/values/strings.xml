@@ -35,4 +35,13 @@
     <string name="premium_activate_button">Activate প্রিমিয়াম</string>
     <string name="premium_activated">✅ প্রিমিয়াম অ্যাক্টিভ হয়েছে — TrxID সংরক্ষিত আছে</string>
     <string name="premium_invalid_trx">❌ TrxID সঠিক নয় — bKash থেকে আসা আইডিটি হুবহু দিন</string>
+
+    <string name="update_check_button">🔄 নতুন আপডেট চেক করুন</string>
+    <string name="update_available_title">🚀 নতুন ভার্সন এসেছে!</string>
+    <string name="update_available_message">QuickDial Pro %1$s নামানোর জন্য প্রস্তুত।</string>
+    <string name="update_download">আপডেট নামাও</string>
+    <string name="update_later">পরে</string>
+    <string name="update_downloading">⬇️ আপডেট নামছে…</string>
+    <string name="update_up_to_date">✅ অ্যাপটি ইতিমধ্যে সর্বশেষ ভার্সনে আছে</string>
+    <string name="update_install_failed">ইনস্টল পেজ খোলা যায়নি — "Install unknown apps" অনুমতি দিন</string>
 </resources>

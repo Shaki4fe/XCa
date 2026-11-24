@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             binding.bottomNav.selectedItemId = R.id.nav_dialer
+            UpdateChecker.checkForUpdate(this, manual = false)
         }
     }
 }

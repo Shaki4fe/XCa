@@ -33,6 +33,9 @@ class SettingsFragment : Fragment() {
         binding.premiumActivateButton.setOnClickListener {
             startActivity(Intent(requireContext(), PremiumActivity::class.java))
         }
+        binding.updateCheckButton.setOnClickListener {
+            UpdateChecker.checkForUpdate(requireActivity(), manual = true)
+        }
         binding.bkashCard.setOnClickListener {
             val copy = getString(R.string.settings_bkash_value, QuickContact.bkashNumber)
             Toast.makeText(requireContext(), copy, Toast.LENGTH_LONG).show()
