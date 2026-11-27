@@ -3,7 +3,6 @@ package com.shakil.quickdial
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.Button
 import android.widget.GridLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -57,12 +56,9 @@ class MainActivity : AppCompatActivity() {
                 textSize = 24f
             }
             val params = GridLayout.LayoutParams().apply {
-                width = 0
-                height = GridLayout.LayoutParams.WRAP_CONTENT
                 columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
                 rowSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
                 setMargins(8, 8, 8, 8)
-                gravity = Gravity.FILL
             }
             button.layoutParams = params
             button.setOnClickListener {
